@@ -9,6 +9,18 @@ engine = db.createEngine()
 
 app = Flask(__name__)
 
+@app.route('/primo/<num>')
+def primo(num):
+    if(int(num)>=1):
+        for i in range(2, int(num)):
+            if (num %i ==0):
+                print(num," no es numero primo")
+            else:
+                print(num," es primo")
+    else:
+        print(num," no es un numero primo")
+
+
 
 @app.route('/static/<content>')
 def static_content(content):
